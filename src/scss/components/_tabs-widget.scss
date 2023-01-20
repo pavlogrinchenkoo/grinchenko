@@ -36,6 +36,7 @@
   min-height: 425px;
   padding: 20px;
   min-width: calc(100vw - 50px);
+  background: utils.$gray;
   @include utils.flex(flex-start, flex-start, column);
 
 

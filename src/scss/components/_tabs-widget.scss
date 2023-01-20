@@ -1,0 +1,55 @@
+@use "utils";
+
+.tabs {
+  position: relative;
+  left: -20px;
+  width: calc(100% + 40px);
+  overflow: scroll;
+  margin-bottom: 40px;
+  @include utils.flex(flex-start, center, row);
+}
+
+.tab {
+  opacity: 0.3;
+  padding-bottom: 20px;
+  @include utils.text(utils.rem(utils.$H24), 900, utils.$black);
+  margin-left: 20px;
+
+  margin-right: 20px;
+
+  &.active {
+    opacity: 1;
+    border-bottom: 2px solid utils.$black;
+  }
+}
+
+.cards {
+  position: relative;
+  left: -20px;
+  width: calc(100% + 40px);
+  overflow: scroll;
+  margin-bottom: 40px;
+  @include utils.flex(flex-start, center, row);
+}
+
+.card {
+  min-height: 425px;
+  padding: 20px;
+  min-width: calc(100vw - 50px);
+  @include utils.flex(flex-start, flex-start, column);
+
+
+  &__svg{
+    margin-bottom: 40px;
+  }
+
+  &__title{
+    margin-bottom: 15px;
+    @include utils.text(utils.rem(utils.$H22), 700, utils.$black);
+  }
+
+  &__subtitle{
+    line-height: 24px;
+    @include utils.text(utils.rem(utils.$H15), 400, utils.$black);
+  }
+}

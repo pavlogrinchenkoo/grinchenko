@@ -1,11 +1,11 @@
 @use "../utils";
 
-.tech{
+.tech {
   width: 100%;
   background: utils.$white;
-  padding: 120px 0 60px 0;
+  padding: 120px 20px 60px 20px;
 
-  &__inner{
+  &__inner {
     @include utils.flex(center, flex-start, column);
   }
 }

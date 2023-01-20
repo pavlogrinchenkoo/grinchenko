@@ -9,9 +9,9 @@ cd dist
 echo > .nojekyll
 
 git init
-git checkout -B main
+git checkout -B master
 git add -A
 git commit -m 'gh-pages'
 
-git push -f git@github.com:mergerocks/parcel-static.git main:gh-pages
+git push -f git@github.com:pablooeescobaro/grinchenko.git master:gh-pages
 cd -

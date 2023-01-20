@@ -1,0 +1,64 @@
+@use "../utils";
+
+.header {
+  padding: 20px 20px;
+  width: 100%;
+  background: utils.$black;
+
+  &__inner {
+    @include utils.flex(space-between, center, row);
+  }
+
+  & .logo {
+    text-transform: uppercase;
+
+    @include utils.text(utils.rem(utils.$H18), 700, utils.$white);
+  }
+
+  & .menu {
+    width: 100%;
+    margin-right: 30px;
+    display: none;
+    @include utils.media("tablet-small") {
+      display: block;
+    }
+    // @include utils.flex(flex-end, center, row);
+
+    &__items {
+      @include utils.flex(flex-end, center, column);
+
+      @include utils.media("tablet-small") {
+        @include utils.flex(flex-end, center, row);
+      }
+    }
+
+    &__item {
+      &:not(:last-of-type) {
+        margin-bottom: 16px;
+      }
+
+      @include utils.media("tablet-small") {
+        &:not(:last-of-type) {
+          margin-right: 16px;
+          margin-bottom: 0px;
+        }
+      }
+
+      & a {
+        @include utils.text(utils.rem(utils.$H15), 500, utils.$white);
+        text-decoration: none;
+        @include utils.media("tablet-small") {
+          padding: 9.5px 0;
+        }
+      }
+    }
+  }
+
+  & .button {
+    margin-right: 37px;
+
+    @include utils.media("tablet-small") {
+      margin-right: 0;
+    }
+  }
+}

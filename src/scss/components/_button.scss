@@ -1,0 +1,27 @@
+@use "utils";
+
+.button {
+  padding: 8px 30px;
+  display: block;
+  border: 2px solid utils.$yellow;
+
+  background: utils.$yellow;
+  white-space: nowrap;
+  line-height: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 30px;
+  @include utils.text(utils.rem(utils.$H14), 700, utils.$black);
+  @include utils.flex(center, center, row);
+  @include utils.transition(border, background, color);
+
+  &--big {
+    padding: 18px 50px;
+  }
+
+  &:hover{
+    border: 2px solid utils.$white;
+    background: transparent;
+    color: utils.$white;
+  }
+}

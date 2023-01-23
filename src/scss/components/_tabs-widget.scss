@@ -6,7 +6,13 @@
   width: calc(100% + 40px);
   overflow: scroll;
   margin-bottom: 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   @include utils.flex(flex-start, center, row);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .tab {
@@ -14,8 +20,16 @@
   padding-bottom: 20px;
   @include utils.text(utils.rem(utils.$H24), 900, utils.$black);
   margin-left: 20px;
-
   margin-right: 20px;
+  border-bottom: 2px solid utils.$white;
+  white-space: nowrap;
+  cursor: pointer;
+
+  @include utils.transition(opacity, border-color);
+
+  @include utils.media("tablet") {
+    font-size: 36px;
+  }
 
   &.active {
     opacity: 1;
@@ -29,27 +43,60 @@
   width: calc(100% + 40px);
   overflow: scroll;
   margin-bottom: 40px;
-  @include utils.flex(flex-start, center, row);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include utils.media("tablet") {
+    margin-bottom: 80px;
+  }
+
+  &.active {
+    @include utils.flex(flex-start, center, row);
+  }
 }
 
 .card {
-  min-height: 425px;
+  min-height: 375px;
   padding: 20px;
-  min-width: calc(100vw - 50px);
+  min-width: calc(100vw - 60px);
+  max-width: 330px;
   background: utils.$gray;
+  margin-right: 20px;
+  text-align: left;
+
   @include utils.flex(flex-start, flex-start, column);
+  @include utils.media("phone") {
+    width: 330px;
+    min-width: 330px;
+  }
 
+  @include utils.media("tablet") {
+    min-height: 425px;
+  }
 
-  &__svg{
+  &:not(:last-of-type){
+    margin-right: 20px;
+  }
+
+  &:first-of-type {
+    margin-left: 20px;
+  }
+
+  &__svg {
     margin-bottom: 40px;
   }
 
-  &__title{
+  &__title {
     margin-bottom: 15px;
     @include utils.text(utils.rem(utils.$H22), 700, utils.$black);
   }
 
-  &__subtitle{
+  &__subtitle {
     line-height: 24px;
     @include utils.text(utils.rem(utils.$H15), 400, utils.$black);
   }

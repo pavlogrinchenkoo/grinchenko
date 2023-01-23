@@ -1,0 +1,120 @@
+@use "../utils";
+
+.cases {
+  width: 100%;
+  padding: 40px 20px;
+  background: utils.$white;
+
+  @include utils.media("tablet") {
+    padding: 60px 20px;
+  }
+
+  &__inner {
+    @include utils.flex(center, flex-start, column);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    @include utils.text(utils.rem(utils.$H26), 900, utils.$black);
+
+    @include utils.media("tablet") {
+      font-size: 36px;
+    }
+  }
+
+  &__subtitle {
+    line-height: 24px;
+    margin-bottom: 45px;
+    @include utils.text(utils.rem(utils.$H16), 400, utils.$blackgray);
+
+    @include utils.media("tablet") {
+      max-width: 500px;
+      margin-bottom: 50;
+    }
+  }
+
+  &__items {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+
+    @include utils.media("tablet") {
+      width: calc(100%);
+      margin-left: 0;
+
+      @include utils.flex(space-between, flex-start, row, wrap);
+    }
+  }
+
+  &__item {
+    height: 350px;
+    position: relative;
+    padding: 30px 20px;
+
+    @include utils.flex(flex-end, flex-start, column);
+
+    @include utils.media("tablet") {
+      padding: 40px 40px;
+      width: calc(50% - 20px);
+      max-width: 480px;
+      margin-left: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+
+      @include utils.media("tablet") {
+        margin-bottom: 40px;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 60px;
+
+      @include utils.media("tablet") {
+        margin-bottom: 80px;
+      }
+    }
+
+    &:nth-child(1) {
+      background: linear-gradient(
+          180deg,
+          rgba(22, 28, 58, 0) 0%,
+          rgba(21, 27, 61, 0.85) 100%
+        ),
+        url(../assets/images/dzing-bg.png);
+      background-size: cover;
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(
+          180deg,
+          rgba(22, 28, 58, 0) 0%,
+          rgba(21, 27, 61, 0.85) 100%
+        ),
+        url(../assets/images/starsnation-bg.png);
+      background-size: cover;
+    }
+
+    &:nth-child(3) {
+      background: linear-gradient(
+          180deg,
+          rgba(22, 28, 58, 0) 0%,
+          rgba(21, 27, 61, 0.85) 100%
+        ),
+        url(../assets/images/kawoon-bg.png);
+      background-size: cover;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      @include utils.text(utils.rem(utils.$H24), 900, utils.$white);
+    }
+
+    &__subtitle {
+      text-transform: uppercase;
+      @include utils.text(utils.rem(utils.$H14), 700, utils.$white);
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use "../utils";
+
+.about {
+  width: 100%;
+  padding: 40px 20px 80px 20px;
+  background: utils.$white;
+
+  @include utils.media("tablet") {
+    padding: 60px 20px 120px 20px;
+  }
+
+  &__cards {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__card {
+    padding: 20px;
+    text-transform: uppercase;
+    line-height: 19px;
+    background: utils.$gray;
+    @include utils.text(utils.rem(utils.$H16), 500, utils.$black);
+
+    @include utils.media("tablet") {
+      font-size: 18px;
+    }
+  }
+}
+
+.language_cards {
+  width: 100%;
+
+  @include utils.media("tablet") {
+    @include utils.flex(center, center, row, nowrap);
+  }
+}
+
+.language_card {
+  width: 100%;
+  background: utils.$gray;
+  padding: 20px 0;
+  text-transform: uppercase;
+  text-align: center;
+  @include utils.text(utils.rem(utils.$H16), 500, utils.$black);
+
+  @include utils.media("tablet") {
+    font-size: 18px;
+  }
+
+  &:not(:last-of-type){
+    margin-bottom: 5px;
+
+    @include utils.media("tablet") {
+      margin-bottom: 0;
+      margin-right: 5px;
+    }
+  }
+}

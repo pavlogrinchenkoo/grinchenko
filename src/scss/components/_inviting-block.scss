@@ -1,0 +1,20 @@
+@use "utils";
+
+.inviting-block{
+  width: 100%;
+  @include utils.flex(center, center, column);
+
+  @include utils.media("tablet") {
+    @include utils.flex(center, center, row, wrap);
+  }
+
+  &__title{
+    margin-bottom: 30px;
+    @include utils.text(utils.rem(utils.$H22), 700, utils.$black);
+
+    @include utils.media("tablet") {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+}

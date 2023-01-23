@@ -3,7 +3,13 @@
 .tech {
   width: 100%;
   background: utils.$white;
-  padding: 120px 20px 60px 20px;
+  padding: 80px 20px 40px 20px;
+  text-align: center;
+  line-height: 26px;
+
+  @include utils.media("tablet") {
+    padding: 120px 20px 60px 20px;
+  }
 
   &__inner {
     @include utils.flex(center, flex-start, column);

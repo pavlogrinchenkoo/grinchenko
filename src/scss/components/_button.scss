@@ -4,6 +4,7 @@
   padding: 8px 30px;
   display: block;
   border: 2px solid utils.$yellow;
+  cursor: pointer;
 
   background: utils.$yellow;
   white-space: nowrap;
@@ -19,9 +20,17 @@
     padding: 18px 50px;
   }
 
-  &:hover{
-    border: 2px solid utils.$white;
+  &:hover {
+    border: 2px solid utils.$black;
     background: transparent;
-    color: utils.$white;
+    color: utils.$black;
+  }
+
+  &--white {
+    &:hover {
+      border: 2px solid utils.$white !important;
+      background: transparent;
+      color: utils.$white !important;
+    }
   }
 }

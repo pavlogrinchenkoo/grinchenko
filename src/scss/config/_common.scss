@@ -16,6 +16,7 @@ html {
 body {
   font-family: v.$primary-font;
   @include utils.flex(flex-start, center, column);
+  caret-color: utils.$white;
 }
 
 .container {

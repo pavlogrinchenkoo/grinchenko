@@ -1,20 +1,51 @@
 @use "utils";
 
-.inviting-block{
+.inviting-block {
   width: 100%;
-  @include utils.flex(center, center, column);
+  @include utils.flex(center, center, column-reverse);
 
   @include utils.media("tablet") {
-    @include utils.flex(center, center, row, wrap);
+    @include utils.flex(center, center, row-reverse, wrap);
   }
 
-  &__title{
+  &__button:hover + div {
+    color: yellow;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: utils.$yellow;
+    }
+  }
+
+  &__title-wrapper {
+    position: relative;
     margin-bottom: 30px;
-    @include utils.text(utils.rem(utils.$H22), 700, utils.$black);
+    padding: 10px;
 
     @include utils.media("tablet") {
       margin-bottom: 0;
       margin-right: 30px;
     }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: utils.$yellow;
+
+      @include utils.transition(top);
+    }
+  }
+
+  &__title {
+    position: relative;
+    @include utils.text(utils.rem(utils.$H22), 700, utils.$black);
   }
 }

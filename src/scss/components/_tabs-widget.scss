@@ -24,6 +24,7 @@
   border-bottom: 2px solid utils.$white;
   white-space: nowrap;
   cursor: pointer;
+  display: block;
 
   @include utils.transition(opacity, border-color);
 
@@ -55,6 +56,10 @@
     margin-bottom: 80px;
   }
 
+  @include utils.media("tablet-wide") {
+    left: 0;
+  }
+
   &.active {
     @include utils.flex(flex-start, center, row);
   }
@@ -70,7 +75,7 @@
   text-align: left;
 
   @include utils.flex(flex-start, flex-start, column);
-  @include utils.media("phone") {
+  @include utils.media("phone-wide") {
     width: 330px;
     min-width: 330px;
   }
@@ -79,12 +84,22 @@
     min-height: 425px;
   }
 
-  &:not(:last-of-type){
+  &:not(:last-of-type) {
     margin-right: 20px;
   }
 
   &:first-of-type {
     margin-left: 20px;
+
+    @include utils.media("tablet-wide") {
+      margin-left: 0;
+    }
+  }
+
+  &:last-of-type {
+    @include utils.media("tablet-wide") {
+      margin-right: 0;
+    }
   }
 
   &__svg {

@@ -1,0 +1,51 @@
+@use "../utils";
+
+.footer{
+  width: 100%;
+  padding: 40px 20px 80px 20px;
+  background: utils.$black;
+  @include utils.flex(center, center, column);
+
+  @include utils.media("tablet") {
+    padding: 60px 20px;
+
+    @include utils.flex(flex-start, flex-start, column);
+  }
+
+  &__write-me{
+    margin-bottom: 30px;
+
+    @include utils.text(utils.rem(utils.$H18), 400, utils.$white);
+    @include utils.flex(center, center, column);
+
+    @include utils.media("tablet") {
+      margin-bottom: 16px;
+      @include utils.flex(flex-start, column, row);
+    }
+
+    &__link{
+      text-transform: uppercase;
+      text-decoration: underline;
+      margin-top: 2px;
+      cursor: pointer;
+      @include utils.text(utils.rem(utils.$H14), 700, utils.$yellow);
+
+      @include utils.media("tablet") {
+        margin-top: 0;
+        margin-left: 15px;
+        font-size: 22px;
+        @include utils.flex(flex-start, flex-start, row);
+      }
+    }
+  }
+
+  &__copyright{
+    min-width: 292px;
+    text-align: center;
+    @include utils.text(utils.rem(utils.$H18), 400, utils.$white);
+
+    @include utils.media("tablet") {
+      text-align: left;
+    }
+  }
+}

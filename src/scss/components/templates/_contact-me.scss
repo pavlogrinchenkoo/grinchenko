@@ -1,0 +1,92 @@
+@use "../utils";
+
+.contact{
+  width: 100%;
+  padding: 80px 20px 40px 20px;
+  background: utils.$black;
+
+  @include utils.media("tablet") {
+    padding: 120px 20px 60px 20px;
+  }
+
+  &__inner{
+    @include utils.flex(space-between, center, column);
+
+    @include utils.media("tablet") {
+      @include utils.flex(space-between, center, row);
+    }
+  }
+
+  &__title{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+    @include utils.text(utils.rem(utils.$H26), 900, utils.$white);
+
+    @include utils.media("tablet") {
+      font-size: 36px;
+    }
+  }
+
+  & .text__wrapper{
+    width: 100%;
+    line-height: 43px;
+    @include utils.text(utils.rem(utils.$H36), 900, utils.$white);
+
+    @include utils.media("tablet") {
+      font-size: 46px;
+      line-height: 55px;
+      width: calc(50% - 20px);
+    }
+  }
+
+  & .form__wrapper{
+    width: 100%;
+    margin-bottom: 80px;
+
+    @include utils.media("tablet") {
+      margin-bottom: 0px;
+      width: calc(50% - 20px);
+    }
+  }
+}
+
+.input{
+  &__item{
+    @include utils.flex(flex-start, flex-start, column);
+
+    &:not(:last-of-type){
+      margin-bottom: 25px;
+    }
+    
+    &:last-of-type{
+      margin-bottom: 40px;
+    }
+  }
+
+  &__name{
+    text-transform: uppercase;
+    line-height: 24px;
+    @include utils.text(utils.rem(utils.$H16), 300, utils.$white);
+  }
+
+  &__input{
+    width: 100%;
+    background: transparent;
+    border:none;
+    border-bottom: 0.5px solid #FFFFFF;
+    height: 25px;
+    padding: 0;
+
+
+    @include utils.text(utils.rem(utils.$H14), 300, utils.$white);
+  }
+
+  &__button{
+    max-width: 160px;
+
+    @include utils.media("tablet") {
+      max-width: 215px;
+    }
+  }
+}

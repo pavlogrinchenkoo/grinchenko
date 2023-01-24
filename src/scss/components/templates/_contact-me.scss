@@ -1,6 +1,6 @@
 @use "../utils";
 
-.contact{
+.contact {
   width: 100%;
   padding: 80px 20px 40px 20px;
   background: utils.$black;
@@ -9,7 +9,7 @@
     padding: 120px 20px 60px 20px;
   }
 
-  &__inner{
+  &__inner {
     @include utils.flex(space-between, center, column);
 
     @include utils.media("tablet") {
@@ -17,7 +17,7 @@
     }
   }
 
-  &__title{
+  &__title {
     text-transform: uppercase;
     margin-bottom: 20px;
     display: inline-block;
@@ -28,7 +28,7 @@
     }
   }
 
-  & .text__wrapper{
+  & .text__wrapper {
     width: 100%;
     line-height: 43px;
     @include utils.text(utils.rem(utils.$H36), 900, utils.$white);
@@ -40,7 +40,7 @@
     }
   }
 
-  & .form__wrapper{
+  & .form__wrapper {
     width: 100%;
     margin-bottom: 80px;
 
@@ -51,38 +51,38 @@
   }
 }
 
-.input{
-  &__item{
+.input {
+  &__item {
     @include utils.flex(flex-start, flex-start, column);
 
-    &:not(:last-of-type){
+    &:not(:last-of-type) {
       margin-bottom: 25px;
     }
-    
-    &:last-of-type{
+
+    &:last-of-type {
       margin-bottom: 40px;
     }
   }
 
-  &__name{
+  &__name {
     text-transform: uppercase;
     line-height: 24px;
     @include utils.text(utils.rem(utils.$H16), 300, utils.$white);
   }
 
-  &__input{
+  &__input {
+    all: unset;
     width: 100%;
     background: transparent;
-    border:none;
-    border-bottom: 0.5px solid #FFFFFF;
+    border: none;
+    border-bottom: 0.5px solid #ffffff;
     height: 25px;
     padding: 0;
-
 
     @include utils.text(utils.rem(utils.$H14), 300, utils.$white);
   }
 
-  &__button{
+  &__button {
     max-width: 160px;
 
     @include utils.media("tablet") {

@@ -32,6 +32,10 @@
     font-size: 36px;
   }
 
+  &:hover{
+    opacity: .5;
+  }
+
   &.active {
     opacity: 1;
     border-bottom: 2px solid utils.$black;

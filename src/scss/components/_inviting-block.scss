@@ -31,16 +31,18 @@
       margin-right: 30px;
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50px;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background: utils.$yellow;
+    @include utils.media("tablet-wide") {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: utils.$yellow;
 
-      @include utils.transition(top);
+        @include utils.transition(top);
+      }
     }
   }
 

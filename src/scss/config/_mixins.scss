@@ -85,7 +85,7 @@ $breakpoints: (
 
 @mixin transition($transition-properties...) {
   transition-property: $transition-properties;
-  transition-duration: 0.2s;
+  transition-duration: .2s;
   transition-timing-function: ease;
 }
 

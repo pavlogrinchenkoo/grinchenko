@@ -7,6 +7,10 @@
   text-align: center;
   line-height: 26px;
 
+  &__card{
+    position: relative;
+  }
+
   @include utils.media("tablet") {
     padding: 120px 20px 60px 20px;
   }

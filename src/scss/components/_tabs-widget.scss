@@ -32,8 +32,8 @@
     font-size: 36px;
   }
 
-  &:hover{
-    opacity: .5;
+  &:hover {
+    opacity: 0.5;
   }
 
   &.active {
@@ -69,6 +69,56 @@
   }
 }
 
+.card__svg__wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 40px;
+  top: 0;
+
+  @include utils.transition(top);
+}
+
+.card__wrapper {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 375px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: utils.$yellow;
+    @include utils.transition(top);
+
+    @include utils.media("tablet") {
+      top: 425px;
+    }
+  }
+
+  & .card__inner .card__svg__wrapper .card__svg {
+    &:first-child {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    & .card__inner .card__svg__wrapper {
+      top: -5px;
+      & .card__svg {
+        &:first-child {
+          position: absolute;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:before {
+      top: 0;
+    }
+  }
+}
+
 .card {
   min-height: 375px;
   padding: 20px;
@@ -77,8 +127,8 @@
   background: utils.$gray;
   margin-right: 20px;
   text-align: left;
+  position: relative;
 
-  @include utils.flex(flex-start, flex-start, column);
   @include utils.media("phone-wide") {
     width: 330px;
     min-width: 330px;
@@ -86,6 +136,7 @@
 
   @include utils.media("tablet") {
     min-height: 425px;
+    padding: 60px 30px;
   }
 
   &:not(:last-of-type) {
@@ -106,8 +157,14 @@
     }
   }
 
+  &__inner {
+    @include utils.flex(flex-start, flex-start, column);
+  }
+
   &__svg {
     margin-bottom: 40px;
+    @include utils.transition(opacity);
+    fill: green;
   }
 
   &__title {

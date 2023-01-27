@@ -6,7 +6,9 @@
   background: utils.$black;
 
   @include utils.media("tablet") {
+    height: calc(100vh - 176px);
     padding: 120px 20px 60px 20px;
+    @include utils.flex(center, center, column);
   }
 
   &__inner {

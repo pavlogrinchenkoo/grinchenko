@@ -5,34 +5,57 @@
   padding: 0px 20px;
   background: utils.$black;
 
-  &__inner{
+  &__inner {
     @include utils.flex(center, flex-start, column);
     height: calc(100vh - 77px);
+
+    @include utils.media("tablet") {
+      @include utils.flex(center, center, row);
+    }
   }
 
-  &__title{
+  &__left-part {
+    @include utils.flex(center, flex-start, column);
+    margin-bottom: 10px;
+  }
+
+  &__right-part {
+    display: none;
+    width: 100%;
+
+    @include utils.media("tablet") {
+      @include utils.flex(flex-end, flex-start, row);
+    }
+  }
+
+  &__me {
+    max-width: calc(500px - 100px);
+    // max-height: calc(100vh / 2 - 87px);
+  }
+
+  &__title {
     line-height: 44px;
     margin-bottom: 20px;
     max-width: 298px;
     text-transform: uppercase;
     @include utils.text(utils.rem(utils.$H36), 900, utils.$white);
 
-    @include utils.media('phone'){
+    @include utils.media("phone") {
       max-width: 382px;
     }
 
-    @include utils.media('tablet-wide'){
+    @include utils.media("tablet-wide") {
       font-size: 46px;
       line-height: 55px;
       max-width: 500px;
     }
   }
 
-  &__subtitle{
+  &__subtitle {
     line-height: 22px;
     margin-bottom: 50px;
     @include utils.text(utils.rem(utils.$H16), 400, utils.$white);
-    @include utils.media('tablet-wide'){
+    @include utils.media("tablet-wide") {
       max-width: 50%;
       margin-bottom: 40px;
     }

@@ -8,16 +8,18 @@
     @include utils.flex(center, center, row-reverse, wrap);
   }
 
-  &__button:hover + div {
-    color: yellow;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background: utils.$yellow;
+  @include utils.media("tablet") {
+    &__button:hover + div {
+      color: yellow;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: utils.$yellow;
+      }
     }
   }
 

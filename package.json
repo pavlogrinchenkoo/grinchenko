@@ -19,7 +19,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.8.0",
     "@parcel/transformer-sass": "^2.8.0",
+    "@parcel/transformer-webmanifest": "^2.8.0",
     "cssnano": "^5.1.14",
     "parcel": "^2.8.0",
     "parcel-plugin-clean-dist": "^0.0.6",

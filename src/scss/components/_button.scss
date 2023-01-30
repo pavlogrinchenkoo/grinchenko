@@ -5,6 +5,7 @@
   display: block;
   border: 2px solid utils.$yellow;
   cursor: pointer;
+  position: relative;
 
   background: utils.$yellow;
   white-space: nowrap;
@@ -20,17 +21,49 @@
     padding: 18px 50px;
   }
 
-  &:hover {
-    border: 2px solid utils.$black;
-    background: transparent;
-    color: utils.$black;
+  @include utils.media("tablet") {
+    &:hover {
+      border: 2px solid utils.$black;
+      background: transparent;
+      color: utils.$black;
+    }
   }
 
   &--white {
-    &:hover {
-      border: 2px solid utils.$white !important;
-      background: transparent;
-      color: utils.$white !important;
+    @include utils.media("tablet") {
+      &:hover {
+        border: 2px solid utils.$white !important;
+        background: transparent;
+        color: utils.$white !important;
+      }
     }
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    border: 2px solid utils.$yellow;
+    cursor: pointer;
+    opacity: 0;
+
+    background: utils.$yellow;
+    white-space: nowrap;
+    line-height: 17px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 30px;
+    @include utils.text(utils.rem(utils.$H14), 700, utils.$black);
+    @include utils.flex(center, center, row);
+    @include utils.transition(border, background, color, opacity);
+  }
+
+  &--sending::after {
+    content: "Sending...";
+    background: utils.$yellow;
+    opacity: 1;
   }
 }

@@ -32,8 +32,10 @@
     font-size: 36px;
   }
 
-  &:hover {
-    opacity: 0.5;
+  @include utils.media("tablet") {
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &.active {
@@ -102,19 +104,21 @@
     }
   }
 
-  &:hover {
-    & .card__inner .card__svg__wrapper {
-      top: -5px;
-      & .card__svg {
-        &:first-child {
-          position: absolute;
-          opacity: 1;
+  @include utils.media("tablet") {
+    &:hover {
+      & .card__inner .card__svg__wrapper {
+        top: -5px;
+        & .card__svg {
+          &:first-child {
+            position: absolute;
+            opacity: 1;
+          }
         }
       }
-    }
 
-    &:before {
-      top: 0;
+      &:before {
+        top: 0;
+      }
     }
   }
 }
@@ -122,7 +126,7 @@
 .card {
   min-height: 375px;
   padding: 20px;
-  min-width: calc(100vw - 60px);
+  min-width: calc(100vw - 100px);
   max-width: 330px;
   background: utils.$gray;
   margin-right: 20px;

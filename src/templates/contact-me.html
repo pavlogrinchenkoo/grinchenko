@@ -16,7 +16,7 @@
           <input class="input__input" type="tel" id="number" value="" />
         </li>
         <li class="input__item">
-          <span class="input__name">HOW CAN WE HELP? *</span>
+          <span class="input__name">HOW CAN I HELP? *</span>
           <input class="input__input" type="text" id="whatsNeed" value="" />
         </li>
         <li class="input__item">
@@ -25,8 +25,10 @@
         </li>
       </ul>
 
+      <span class="input__error" id="inputError"></span>
+
       <div class="input__button" onclick="sendEmail()">
-        <a class="button button--big button--white">SEND MESSAGE</a>
+        <a id="loadingButton" class="button button--big button--white">SEND MESSAGE</a>
       </div>
     </div>
     <div class="text__wrapper">YOU MAKE THE RIGHT CHOICE</div>

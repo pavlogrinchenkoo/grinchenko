@@ -104,7 +104,7 @@
           rgba(22, 28, 58, 0) 0%,
           rgba(21, 27, 61, 0.85) 100%
         ),
-        url(../assets/images/dzing-bg.png) center;
+        url(../assets/images/dzing-bg.webp) center;
       background-size: cover;
     }
 
@@ -114,7 +114,7 @@
           rgba(22, 28, 58, 0) 0%,
           rgba(21, 27, 61, 0.85) 100%
         ),
-        url(../assets/images/kawoon-bg.png) center;
+        url(../assets/images/kawoon-bg.webp) center;
       background-size: cover;
     }
 
@@ -124,7 +124,7 @@
           rgba(22, 28, 58, 0) 0%,
           rgba(21, 27, 61, 0.85) 100%
         ),
-        url(../assets/images/starsnation-bg-small.png) center;
+        url(../assets/images/starsnation-bg-small.webp) center;
       background-size: cover;
 
       @include utils.media("tablet") {
@@ -133,7 +133,7 @@
             rgba(22, 28, 58, 0) 0%,
             rgba(21, 27, 61, 0.85) 100%
           ),
-          url(../assets/images/starsnation-bg.png) center;
+          url(../assets/images/starsnation-bg.webp) center;
         background-size: cover;
       }
     }

@@ -42,6 +42,7 @@
   &__copyright{
     min-width: 292px;
     text-align: center;
+    margin-bottom: 20px;
     @include utils.text(utils.rem(utils.$H18), 400, utils.$white);
 
     @include utils.media("tablet") {

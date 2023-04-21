@@ -1,0 +1,2 @@
+const matches=document.querySelectorAll("p");document.querySelectorAll('a[href^="#"').forEach((e=>{e.addEventListener("click",(function(e){e.preventDefault();let t=this.getAttribute("href").substring(1);const o=document.getElementById(t),n=document.querySelector(".header").offsetHeight,c=o.getBoundingClientRect().top-n;window.scrollBy({top:c,behavior:"smooth"})}))}));
+//# sourceMappingURL=index.5639a581.js.map

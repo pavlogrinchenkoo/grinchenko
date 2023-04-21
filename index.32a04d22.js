@@ -1,0 +1,2 @@
+let e=document.getElementById("sandwichmenu"),t=document.getElementById("menubox");var n=document.getElementsByClassName("menu__item");document.getElementById("sandwichmenu").onclick=function(){e.classList.toggle("active"),t.classList.toggle("active")};for(var c=0;c<n.length;c++)n[c].addEventListener("click",(function(){e.classList.remove("active"),t.classList.remove("active")}));
+//# sourceMappingURL=index.32a04d22.js.map
